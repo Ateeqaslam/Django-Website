@@ -8,7 +8,7 @@
 <!-- contact -->
 
 <body style="background-color: #3931af;">
-    <form action="send-form/" method="post" style="background-color: grey;">
+    <form action="send-form/" method="POST" style="background-color: grey;">
         
         {% csrf_token %} 
         <table style="width:100%;max-width:550px;border:0;" cellpadding="8" cellspacing="0">
@@ -49,9 +49,7 @@
                     * - required fields
                 </td>
                 <td>
-                    <div style="float:right"><a href="https://www.100forms.com" id="lnk100" title="form to email">form
-                            to
-                            email</a></div>
+                  
                     <input name="skip_Submit" type="submit" value="Submit" />
 
                 </td>

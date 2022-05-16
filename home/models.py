@@ -8,3 +8,6 @@ class Feedback(models.Model):
     Pnumber = models.IntegerField(null=True)
     email = models.EmailField(max_length=254)
     comment = models.CharField(max_length=200)
+    
+    def __str__(self):
+        return self.name

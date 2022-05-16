@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
-from home.models import Feedback
+from .models import Feedback
 
 # Create your views here.
 
@@ -23,9 +23,10 @@ def profile(request):
 
 
 def contact_form(request):
-    n = request.Post['Name']
-    number = request.Post['PhoneNumber']
-    mail = request.Post['FromEmailAddress']
-    Comment = request.Post['Comments']
-    # feedback = Feedback(name = n, Pnumber = number,email = mail,comment = Comment)
+    n = request.POST['Name']
+    number = request.POST['PhoneNumber']
+    mail = request.POST['FromEmailAddress']
+    Comment = request.POST['Comments']
+    feedback = Feedback(name = n, Pnumber = number,email = mail,comment = Comment)
+    feedback.save()
     return redirect(contact)
